@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	client, err := ethclient.Dial("https://rinkeby.infura.io")
+	client, err := ethclient.Dial("https://worldchain-sepolia.g.alchemy.com/v2/GOMFOBqhhAUd0x3yDlAi1pyACsyOskHM")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,14 +36,14 @@ func main() {
 		log.Fatal(err)
 	}
 
-	value := big.NewInt(1000000000000000000) // in wei (1 eth)
-	gasLimit := uint64(21000)                // in units
+	value := big.NewInt(10000000000000000) // in wei (0.001 eth)
+	gasLimit := uint64(21000)              // in units
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
+	toAddress := common.HexToAddress("0x4361F953A83a0919a86ECef5b007A32585cFe4Bc")
 	var data []byte
 	tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
 
