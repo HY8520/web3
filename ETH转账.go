@@ -14,12 +14,12 @@ import (
 )
 
 func main() {
-	client, err := ethclient.Dial("https://worldchain-sepolia.g.alchemy.com/v2/GOMFOBqhhAUd0x3yDlAi1pyACsyOskHM")
+	client, err := ethclient.Dial("https://eth-sepolia.g.alchemy.com/v2/GOMFOBqhhAUd0x3yDlAi1pyACsyOskHM")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	privateKey, err := crypto.HexToECDSA("fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19")
+	privateKey, err := crypto.HexToECDSA("317c6883a45de66c8ea770dd456aeca5e38879d850b8faccb579ade7481957c9")
 	if err != nil {
 		log.Fatal(err)
 	}
