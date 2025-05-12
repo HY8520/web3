@@ -35,10 +35,15 @@ func main() {
 	// gin start
 	gin.SetMode(gin.ReleaseMode)
 	app := gin.Default()
+	// 获取当前文件路径
 	staticPath := static.GetCurrentAbPathByCaller()
+	// 设置静态文件目录,如果 staticPath 指向一个包含图片的目录，客户端可以通过 /storage/image.jpg
 	app.Static("/storage/", staticPath)
+	//跨域中间件
 	app.Use(middlewares.Cors()) // 「 Cross domain Middleware 」
+	//初始化路由
 	routes.InitRoute(app)
+	//启动服务器
 	_ = app.Run(":" + config.Config.Env.Port)
 
 }
