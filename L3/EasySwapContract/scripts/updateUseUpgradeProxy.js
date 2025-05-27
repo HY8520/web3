@@ -4,7 +4,8 @@ const esDex_name = "EasySwapOrderBook";
 const esDex_address = "0xcEE5AA84032D4a53a0F9d2c33F36701c3eAD5895"
 
 const esVault_name = "EasySwapVault";
-const esVault_address = "0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834"
+// const esVault_address = "0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834"
+const esVault_address = "0x36Eb19B1fAa2BF2C4E518376F7B98Ec0A123bB14"
 
 /**  * 2024/12/22 in sepolia testnet
  * esVault contract deployed to: 0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834

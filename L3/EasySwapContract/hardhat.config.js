@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
-require("@nomiclabs/hardhat-ethers")
+// require("@nomiclabs/hardhat-ethers")
+require("@nomicfoundation/hardhat-ethers")
 require('hardhat-contract-sizer')
 require('@openzeppelin/hardhat-upgrades')
 require('solidity-coverage')
@@ -9,11 +10,11 @@ const { config: dotenvConfig } = require("dotenv")
 const { resolve } = require("path")
 dotenvConfig({ path: resolve(__dirname, "./.env") })
 
-const SEPOLIA_PK_ONE = process.env.SEPOLIA_PK_ONE
+// const SEPOLIA_PK_ONE = process.env.SEPOLIA_PK_ONE
 const SEPOLIA_PK_TWO = process.env.SEPOLIA_PK_TWO
-if (!SEPOLIA_PK_ONE) {
-  throw new Error("Please set at least one private key in a .env file")
-}
+// if (!SEPOLIA_PK_ONE) {
+//   throw new Error("Please set at least one private key in a .env file")
+// }
 
 const MAINNET_PK = process.env.MAINNET_PK
 const MAINNET_ALCHEMY_AK = process.env.MAINNET_ALCHEMY_AK
@@ -47,7 +48,8 @@ module.exports = {
     },
     sepolia: {
       url: `https://eth-sepolia.g.alchemy.com/v2/${SEPOLIA_ALCHEMY_AK}`,
-      accounts: [`${SEPOLIA_PK_ONE}`, `${SEPOLIA_PK_TWO}`],
+      // accounts: [`${SEPOLIA_PK_ONE}`, `${SEPOLIA_PK_TWO}`],
+      accounts: [`${SEPOLIA_PK_TWO}`],
     },
     // optimism: {
     //   url: `https://rpc.ankr.com/optimism`,
