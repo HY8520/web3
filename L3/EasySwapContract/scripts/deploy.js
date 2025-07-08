@@ -20,26 +20,26 @@ async function main() {
   // console.log(await upgrades.erc1967.getImplementationAddress(esVault.address), " esVault getImplementationAddress")
   // console.log(await upgrades.erc1967.getAdminAddress(esVault.address), " esVault getAdminAddress")
 
-  // newProtocolShare = 200;
-  // newESVault = "0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834";
-  // EIP712Name = "EasySwapOrderBook";
-  // EIP712Version = "1";
-  // let esDex = await ethers.getContractFactory("EasySwapOrderBook")
-  // esDex = await upgrades.deployProxy(esDex, [newProtocolShare, newESVault, EIP712Name, EIP712Version], { initializer: 'initialize' });
-  // await esDex.deployed()
-  // console.log("esDex contract deployed to:", esDex.address)
-  // console.log(await upgrades.erc1967.getImplementationAddress(esDex.address), " esDex getImplementationAddress")
-  // console.log(await upgrades.erc1967.getAdminAddress(esDex.address), " esDex getAdminAddress")
+  newProtocolShare = 200;
+  newESVault = "0x6b61B979B13ED6c76962308F8Cb18852c69aC5C8";
+  EIP712Name = "EasySwapOrderBook";
+  EIP712Version = "1";
+  let esDex = await ethers.getContractFactory("EasySwapOrderBook")
+  esDex = await upgrades.deployProxy(esDex, [newProtocolShare, newESVault, EIP712Name, EIP712Version], { initializer: 'initialize' });
+  await esDex.deployed()
+  console.log("esDex contract deployed to:", esDex.address)
+  console.log(await upgrades.erc1967.getImplementationAddress(esDex.address), " esDex getImplementationAddress")
+  console.log(await upgrades.erc1967.getAdminAddress(esDex.address), " esDex getAdminAddress")
 
-  esDexAddress = "0xcEE5AA84032D4a53a0F9d2c33F36701c3eAD5895"
+  // esDexAddress = "0xcEE5AA84032D4a53a0F9d2c33F36701c3eAD5895"
   // esVaultAddress = "0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834"
-  esVaultAddress = "0x36Eb19B1fAa2BF2C4E518376F7B98Ec0A123bB14"
-  const esVault = await (
-    await ethers.getContractFactory("EasySwapVault")
-  ).attach(esVaultAddress)
-  tx = await esVault.setOrderBook(esDexAddress)
-  await tx.wait()
-  console.log("esVault setOrderBook tx:", tx.hash)
+  // esVaultAddress = "0x36Eb19B1fAa2BF2C4E518376F7B98Ec0A123bB14"
+  // const esVault = await (
+  //   await ethers.getContractFactory("EasySwapVault")
+  // ).attach(esVaultAddress)
+  // tx = await esVault.setOrderBook(esDexAddress)
+  // await tx.wait()
+  // console.log("esVault setOrderBook tx:", tx.hash)
 }
 
 // We recommend this pattern to be able to use async/await everywhere

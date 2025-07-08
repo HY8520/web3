@@ -12,14 +12,14 @@ const { toBn } = require("evm-bn")
  */
 
 const esDex_name = "EasySwapOrderBook";
-const esDex_address = "0xcEE5AA84032D4a53a0F9d2c33F36701c3eAD5895"
+const esDex_address = "0x3429fCfc9e0a183d23Dc2981c528B77626ec3cF8"
 
 const esVault_name = "EasySwapVault";
 // const esVault_address = "0xaD65f3dEac0Fa9Af4eeDC96E95574AEaba6A2834"
-const esVault_address = "0x36Eb19B1fAa2BF2C4E518376F7B98Ec0A123bB14"
+const esVault_address = "0x6b61B979B13ED6c76962308F8Cb18852c69aC5C8"
 
 const erc721_name = "TestERC721"
-const erc721_address = "0xF2e0BA02a187F19F5A390E4f990c684d81A833A0"
+const erc721_address = "0x78dfb02CC4e556522B6b236870D37A4d02f7d43c"
 
 let esDex, esVault, testERC721
 let deployer
@@ -28,70 +28,70 @@ async function main() {
     console.log("deployer: ", deployer.address)
     console.log("trader: ", trader.address)
 
-    esDex = await (
-        await ethers.getContractFactory(esDex_name)
-    ).attach(esDex_address)
+    // esDex = await (
+    //     await ethers.getContractFactory(esDex_name)
+    // ).attach(esDex_address)
 
-    esVault = await (
-        await ethers.getContractFactory(esVault_name)
-    ).attach(esVault_address)
+    // esVault = await (
+    //     await ethers.getContractFactory(esVault_name)
+    // ).attach(esVault_address)
 
-    testERC721 = await (
-        await ethers.getContractFactory(erc721_name)
-    ).attach(erc721_address)
+    // testERC721 = await (
+    //     await ethers.getContractFactory(erc721_name)
+    // ).attach(erc721_address)
 
 
     // 1. setApprovalForAll
     await approvalForVault();
 
     // 2. make order
-    await testMakeOrder();
+    // await testMakeOrder();
 
-    // for (let i = 1; i < 20; i++) {
-    //     await testMakeOrder(i);
-    // }
+    for (let i = 1; i < 20; i++) {
+        await testMakeOrder(i);
+    }
 
     // 3. cancel order
     // let orderKeys = [];
     // await testCancelOrder(orderKeys);
 
-    // let orderKeys1 = ["0xa48c77f5aa25cd7b0d207b491cf7a0ef5cc5cf15e3c1f9534b6791ef856f0dbe"]
-    // let orderKeys2 = ["0x2f01e4ef5cbea217934b2bb27a73fac35032a75ffb030dea41fdb995c55f3069",
-    //     "0x3450ada942fc2595d7d12bd6385cf3f1b03a614b9076bb23adaf808205e49d3b"]
+    let orderKeys1 = ["0xa48c77f5aa25cd7b0d207b491cf7a0ef5cc5cf15e3c1f9534b6791ef856f0dbe"]
+    let orderKeys2 = ["0x2f01e4ef5cbea217934b2bb27a73fac35032a75ffb030dea41fdb995c55f3069",
+        "0x3450ada942fc2595d7d12bd6385cf3f1b03a614b9076bb23adaf808205e49d3b"]
 
-    // await testCancelOrder(orderKeys1);
-    // await testCancelOrder(orderKeys2);
+    await testCancelOrder(orderKeys1);
+    await testCancelOrder(orderKeys2);
 
 
     // 4. match order 
-    // await testMatchOrder();
+    await testMatchOrder();
 
-    // let orderKeys = ["0x98e25dd9a45bbf79100ebe3b1b311b2b6702a28c9fca5ee317feb0049893faa5",
-    //     "0x0c78b81d5da49fe7fd13832aac4aba9f79f31d25453b61ed09ec3ce941adca70",
-    //     "0x201dc11898ad0213485b4b34b9702beedc8f3bbcc71b2e38512508adb59c8ea9"];
+    let orderKeys = ["0x98e25dd9a45bbf79100ebe3b1b311b2b6702a28c9fca5ee317feb0049893faa5",
+        "0x0c78b81d5da49fe7fd13832aac4aba9f79f31d25453b61ed09ec3ce941adca70",
+        "0x201dc11898ad0213485b4b34b9702beedc8f3bbcc71b2e38512508adb59c8ea9"];
 
-    // for (let i = 0; i < 2; i++) {
-    //     let info = await getOrderInfo(orderKeys[i]);
-    //     let sellOrder = info.order;
-    //     // console.log("sellOrder: ", sellOrder);
-    //     let buyOrder = {
-    //         side: Side.Bid,
-    //         saleKind: SaleKind.FixedPriceForItem,
-    //         maker: trader.address,
-    //         nft: sellOrder.nft,
-    //         price: sellOrder.price,
-    //         expiry: sellOrder.expiry,
-    //         salt: sellOrder.salt,
-    //     }
+    for (let i = 0; i < 2; i++) {
+        let info = await getOrderInfo(orderKeys[i]);
+        let sellOrder = info.order;
+        // console.log("sellOrder: ", sellOrder);
+        let buyOrder = {
+            side: Side.Bid,
+            saleKind: SaleKind.FixedPriceForItem,
+            maker: trader.address,
+            nft: sellOrder.nft,
+            price: sellOrder.price,
+            expiry: sellOrder.expiry,
+            salt: sellOrder.salt,
+        }
 
-    //     let tx = await esDex.connect(trader).matchOrder(sellOrder, buyOrder, { value: toBn("0.002") });
-    //     let txRec = await tx.wait();
-    //     console.log("matchOrder tx: ", tx.hash);
-    // }
+        let tx = await esDex.connect(trader).matchOrder(sellOrder, buyOrder, { value: toBn("0.002") });
+        let txRec = await tx.wait();
+        console.log("matchOrder tx: ", tx.hash);
+    }
 
     // 5. else
-    // await withdrawProtocolFee();
-    // await testBatchTransferERC721();
+    await withdrawProtocolFee();
+    await testBatchTransferERC721();
 }
 
 async function approvalForVault() {
