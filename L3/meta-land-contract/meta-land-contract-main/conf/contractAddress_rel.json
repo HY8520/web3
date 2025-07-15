@@ -1,0 +1,160 @@
+[
+  {
+    "name": "Startup",
+    "abiUrl": "/contracts/artifacts/Startup.json",
+    "addresses": [
+      {
+        "chainId": 5,
+        "chainName": "Goerli",
+        "address": ""
+      },
+      {
+        "chainId": 43113,
+        "chainName": "avaxTest",
+        "address": "0x92FCb2d49E9ab8be888D3c853715a221b9289832"
+      },
+      {
+        "chainId": 97,
+        "chainName": "BSC Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 4002,
+        "chainName": "Fantom Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 80001,
+        "chainName": "Mumbai",
+        "address": ""
+      },
+      {
+        "chainId": 137,
+        "chainName": "Polygon",
+        "address": "0x357fa1565B94D9F7C770D30c95a405F805d95fEA"
+      },
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Tanenbaum Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 2814,
+        "chainName": "Rollux OPv1 Private",
+        "address": "0xF2969E322C8a2615eD81bd0B50FD1481C4c3f276"
+      }
+    ]
+  },
+  {
+    "name": "BountyFactory",
+    "abiUrl": "/contracts/artifacts/BountyFactory.json",
+    "addresses": [
+      {
+        "chainId": 5,
+        "chainName": "Goerli",
+        "address": ""
+      },
+      {
+        "chainId": 43113,
+        "chainName": "avaxTest",
+        "address": "0xdA33e87C739f1a94c35CF4685F61806ab3A6EbEe"
+      },
+      {
+        "chainId": 97,
+        "chainName": "BSC Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 4002,
+        "chainName": "Fantom Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 80001,
+        "chainName": "Mumbai",
+        "address": ""
+      },
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Tanenbaum Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 2814,
+        "chainName": "Rollux OPv1 Private",
+        "address": "0xDb5453b54cd219d013d840C853a97Ba7347C73A9"
+      }
+    ]
+  },
+  {
+    "name": "Bounty",
+    "abiUrl": "/contracts/artifacts/Bounty.json",
+    "addresses": []
+  },
+  {
+    "name": "BountyStore",
+    "abiUrl": "/contracts/artifacts/BountyStore.json",
+    "addresses": []
+  },
+  {
+    "name": "FactoryStore",
+    "abiUrl": "/contracts/artifacts/FactoryStore.json",
+    "addresses": []
+  },
+  {
+    "name": "BountyFactoryStore",
+    "abiUrl": "/contracts/artifacts/BountyFactoryStore.json",
+    "addresses": []
+  },
+  {
+    "name": "Secondary",
+    "abiUrl": "/contracts/ownership/artifacts/Secondary.json",
+    "addresses": []
+  },
+  {
+    "name": "CrowdfundingFactory",
+    "abiUrl": "/contracts/artifacts/CrowdfundingFactory.json",
+    "addresses": [
+      {
+        "chainId": 5,
+        "chainName": "Goerli",
+        "address": ""
+      },
+      {
+        "chainId": 43113,
+        "chainName": "avaxTest",
+        "address": "0x3c2Bdc7fe51657cDed1b2dD5Bc29FcB9B5a166D0"
+      },
+      {
+        "chainId": 97,
+        "chainName": "BSC Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 4002,
+        "chainName": "Fantom Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 80001,
+        "chainName": "Mumbai",
+        "address": ""
+      },
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Tanenbaum Testnet",
+        "address": ""
+      },
+      {
+        "chainId": 2814,
+        "chainName": "Rollux OPv1 Private",
+        "address": "0x830C78a8859DA6d2AADf2EC65F70249354fce2b6"
+      }
+    ]
+  },
+  {
+    "name": "Crowdfunding",
+    "abiUrl": "/contracts/artifacts/Crowdfunding.json",
+    "addresses": []
+  }
+]

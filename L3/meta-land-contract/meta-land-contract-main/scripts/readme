@@ -1,0 +1,16 @@
+//////////////////////// uups升级系列
+// startup
+// 部署proxy合约
+npx hardhat run scripts/deploy_startup.js --network sepolia
+// 使用之前部署的proxy合约 来升级
+npx hardhat run scripts/upgrade_startup.js --network sepolia
+
+// bountyFactory
+// 部署proxy合约
+npx hardhat run scripts/deploy_bountyfactory.js --network sepolia
+// 使用之前部署的proxy合约 来升级
+npx hardhat run scripts/upgrade_bountyfactory.js --network sepolia
+
+//////////////////////// beacon升级系列
+// 部署和升级 bounty合约
+npx hardhat run scripts/deploy_and_upgrade_bounty.js --network sepolia

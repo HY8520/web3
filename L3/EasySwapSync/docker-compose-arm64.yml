@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: arm64v8/mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpasswd
+      MYSQL_DATABASE: mathsoftwares
+      MYSQL_USER: dingchu
+      MYSQL_PASSWORD: BW&ZxrluR3
+    ports:
+      - "120.24.230.36:3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    platform: linux/arm64
+
+  redis:
+    image: arm64v8/redis:6.2
+    container_name: redis
+    ports:
+      - "47.106.97.221:6379:3306"
+    volumes:
+      - redis_data:/data
+    platform: linux/arm64
+
+volumes:
+  mysql_data:
+  redis_data:

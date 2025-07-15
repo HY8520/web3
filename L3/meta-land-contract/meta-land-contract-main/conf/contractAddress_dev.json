@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Startup",
+    "abiUrl": "/contracts/artifacts/Startup.json",
+    "addresses": [
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Testnet",
+        "address": "0x108E699ca5570D13C89FeE551Aa86D3ADde1FedF"
+      },
+      {
+        "chainId": 57000,
+        "chainName": "Rollux Testnet",
+        "address": "0xc6Bc996320c16cB59f73410ab42eE1C589A0F70A"
+      }
+    ]
+  },
+  {
+    "name": "BountyFactory",
+    "abiUrl": "/contracts/artifacts/BountyFactory.json",
+    "addresses": [
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Testnet",
+        "address": "0x21f4C0533B222C6775411D0Cd54fFBeee31FdF31"
+      },
+      {
+        "chainId": 57000,
+        "chainName": "Rollux Testnet",
+        "address": "0x61c2b9595c289369476074Cc7F6d56DEF1405920"
+      }
+    ]
+  },
+  {
+    "name": "Bounty",
+    "abiUrl": "/contracts/artifacts/Bounty.json",
+    "addresses": []
+  },
+  {
+    "name": "BountyStore",
+    "abiUrl": "/contracts/artifacts/BountyStore.json",
+    "addresses": []
+  },
+  {
+    "name": "FactoryStore",
+    "abiUrl": "/contracts/artifacts/FactoryStore.json",
+    "addresses": []
+  },
+  {
+    "name": "BountyFactoryStore",
+    "abiUrl": "/contracts/artifacts/BountyFactoryStore.json",
+    "addresses": []
+  },
+  {
+    "name": "Secondary",
+    "abiUrl": "/contracts/ownership/artifacts/Secondary.json",
+    "addresses": []
+  },
+  {
+    "name": "CrowdfundingFactory",
+    "abiUrl": "/contracts/artifacts/CrowdfundingFactory.json",
+    "addresses": [
+      {
+        "chainId": 5700,
+        "chainName": "Syscoin Tanenbaum Testnet",
+        "address": "0xCd1eA68781637eE46b140374B2689a5b81A365bb"
+      },
+      {
+        "chainId": 57000,
+        "chainName": "Rollux Testnet",
+        "address": "0x7C4c161a923dF21b1dd1d62b8620Ea24d6E928c4"
+      }
+    ]
+  },
+  {
+    "name": "Crowdfunding",
+    "abiUrl": "/contracts/artifacts/Crowdfunding.json",
+    "addresses": []
+  }
+]
